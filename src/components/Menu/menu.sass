@@ -1,0 +1,136 @@
+.header-mobile
+    width: 100%
+    background-color: #ffffff
+    box-shadow: 0px 10px 60px 0px #e2ecf980
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 10px 15px
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 20000
+    &__icon
+        display: flex
+        align-items: center
+    &__text
+        color: #000000
+        font-size: 26px
+        font-weight: 600
+        line-height: 1.5
+        letter-spacing: 1%
+        display: flex
+        align-items: baseline
+    &__subtext
+        color: #838383
+        font-size: 10px
+        font-weight: 500
+        line-height: 1.5
+        letter-spacing: -1%
+        margin-left: 4px
+    &__toggle
+        display: flex
+        align-items: center
+
+        transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1)
+.test
+    transform: rotate(90deg)
+
+.menu
+    padding: 40px 28px 76px 28px
+    width: 100vw
+    background-color: #ffffff
+    min-height: 100vh
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1)
+    display: grid
+    position: fixed
+    z-index: 10000
+    &__mobile
+        transform: translateY(-110%)
+        &-opened
+            transform: translateY(-3%)
+    &__header
+        display: none
+        align-items: center
+
+    &__icon
+        margin-right: 12px
+    &__text
+        color: #000000
+        font-size: 26px
+        font-weight: 600
+        line-height: 1.5
+        letter-spacing: 1%
+        display: flex
+        align-items: baseline
+    &__subtext
+        color: #838383
+        font-size: 10px
+        font-weight: 500
+        line-height: 1.5
+        letter-spacing: -1%
+        margin-left: 4px
+
+.list
+    &__item
+        color: rgb(145, 151, 179)
+        font-family: Poppins
+        font-weight: 500
+        line-height: 1.5
+        letter-spacing: -1%
+        display: grid
+        grid-template-columns: 24px 1fr 16px
+        gap: 14px
+        align-items: center
+        padding: 11px 8px 11px 11px
+        border-radius: 8px
+        cursor: pointer
+        & .list__arrow
+            transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1)
+        &:not(:last-child)
+            margin-bottom: 17px
+        &-active
+            background: #5932ea
+            color: #ffffff
+            & svg
+                path
+                    stroke: currentColor
+            & .list__arrow
+                transform: rotate(90deg)
+    &__icon
+        display: flex
+        align-items: center
+    &__arrow
+        display: flex
+        align-items: center
+
+.user
+    display: flex
+    align-items: center
+    gap: 12px
+    flex-wrap: wrap
+    &__image
+        display: block
+        border-radius: 50%
+    &__name
+        font-weight: 500
+        letter-spacing: 1%
+    &__role
+        color: #757575
+        font-size: 12px
+        letter-spacing: 1%
+
+@media  (max-width: 768px)
+
+@media  (min-width: 1024px)
+    .header-mobile
+        display: none
+    .menu
+        position: static
+        transform: translateY(0)
+        grid-template-rows: 40px auto 10px
+        width: 306px
+        &__header
+            display: flex
+        &__list
+            margin-top: 65px
